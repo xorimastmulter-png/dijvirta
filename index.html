@@ -1,0 +1,163 @@
+<!doctype html>
+<html lang="hy">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>DIJVIRTA</title>
+<meta name="description" content="DIJVIRTA — DJ software for Windows: 4 decks, BEAT SYNC, RGB waveforms, Beat FX and DJ controller support.">
+<link rel="icon" href="app/dijvirta_logo.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:opsz,wght@6..96,600;6..96,800&family=Noto+Serif+Armenian:wght@600;800&family=Noto+Sans+Armenian:wght@400;500;700&family=Noto+Serif:wght@600;800&family=Noto+Sans:wght@400;500;700&family=IBM+Plex+Mono:wght@500&display=swap">
+<link rel="stylesheet" href="site.css">
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <symbol id="logo" viewBox="126 56 128 84">
+      <circle cx="168" cy="98" r="38" fill="#6C5CE7"/>
+      <circle cx="212" cy="98" r="38" fill="#C6FF3D" fill-opacity=".92"/>
+      <path d="M190 65 A38 38 0 0 1 190 131 A38 38 0 0 1 190 65 Z" fill="#0A0A0F"/>
+    </symbol>
+  </defs>
+</svg>
+
+<header class="wrap top">
+  <a class="mark" href="#top" aria-label="DIJVIRTA"><svg><use href="#logo"/></svg><b>DIJVIRTA</b></a>
+  <nav aria-label="Menu">
+    <a href="#features" data-i="nav_feat">Հնարավորություններ</a>
+    <a href="#test" data-i="nav_test">Թեստ</a>
+    <a href="#download" data-i="nav_dl">Ներբեռնել</a>
+  </nav>
+  <div class="langs" role="group" aria-label="Language">
+    <button type="button" data-lang="hy">ՀԱՅ</button>
+    <button type="button" data-lang="en">ENG</button>
+    <button type="button" data-lang="ru">РУС</button>
+  </div>
+</header>
+
+<main id="top">
+  <div class="wrap hero">
+    <div>
+      <p class="word">DIJVIRTA</p>
+      <div class="rule" aria-hidden="true"><i></i><s></s><i></i></div>
+    </div>
+    <div class="lede">
+      <div>
+        <h1 data-i="h1" data-html>DJ ծրագիր Windows-ի համար՝ <em>մաքուր միքսի</em> համար</h1>
+        <div class="cta">
+          <a class="btn primary dl-link" href="#download"><span data-i="cta_dl">Ներբեռնել Windows-ի համար</span> <small>v1.1.0</small></a>
+          <a class="btn ghost" href="#test" data-i="cta_test">Փորձել 10 րոպե</a>
+        </div>
+      </div>
+      <p data-i="lede">Չորս դեկ, ճշգրիտ BEAT SYNC, RGB ալիքներ, Beat FX ու Pad FX, sampler և պանակներով գրադարան։ Միացրու քո DJ պուլտը ու սկսիր նվագել։</p>
+    </div>
+    <div class="stage" aria-hidden="true">
+      <canvas id="wave"></canvas>
+      <div class="hud">
+        <span class="pill"><span class="dot" style="background:var(--violet)"></span>A <b id="hudA">12.1 Bars</b> <b>124.00</b></span>
+        <span class="pill sync">SYNC · BEAT</span>
+        <span class="pill"><span class="dot" style="background:var(--lime)"></span>B <b id="hudB">4.1 Bars</b> <b>124.00</b></span>
+      </div>
+    </div>
+  </div>
+
+  <section class="wrap" aria-labelledby="look">
+    <div class="sh">
+      <span class="eyebrow" data-i="look_k">Ծրագիրը</span>
+      <h2 id="look" data-i="look_h">Ամեն ինչ մեկ էկրանին</h2>
+      <p data-i="look_p">Ալիքները վերևում, դեկերն ու միքսերը մեջտեղում, գրադարանը ներքևում։ Կոմպակտ դասավորություն, որ աշխատի նաև նոութբուքի էկրանին։</p>
+    </div>
+    <figure class="shot">
+      <div class="bar"><i></i><i></i><i></i><span>DIJVIRTA · 2 decks · SYNC</span></div>
+      <img src="shot.jpg" alt="DIJVIRTA" width="1400" height="723" loading="lazy">
+    </figure>
+  </section>
+
+  <div class="wrap">
+    <div class="nums">
+      <div><b>4</b><span data-i="n1">դեկ՝ A, B, C, D</span></div>
+      <div><b>12</b><span data-i="n2">pad ռեժիմ</span></div>
+      <div><b>16</b><span data-i="n3">sampler սլոտ</span></div>
+      <div><b>18</b><span data-i="n4">Beat FX էֆեկտ</span></div>
+    </div>
+  </div>
+
+  <section class="wrap" id="features" aria-labelledby="fh">
+    <div class="sh">
+      <span class="eyebrow" data-i="f_k">Հնարավորություններ</span>
+      <h2 id="fh" data-i="f_h">Այն, ինչ պետք է DJ-ին</h2>
+    </div>
+    <div class="feat">
+      <article>
+        <h3><svg class="ic" viewBox="0 0 34 34" aria-hidden="true"><circle cx="17" cy="17" r="15" fill="none" stroke="#6C5CE7" stroke-width="3"/><path d="M17 4v8" stroke="#C6FF3D" stroke-width="3" stroke-linecap="round"/></svg><span data-i="f1">Միքս ու SYNC</span></h3>
+        <ul data-i="f1l" data-list></ul>
+      </article>
+      <article>
+        <h3><svg class="ic" viewBox="0 0 34 34" aria-hidden="true"><path d="M2 17h4l3-9 4 18 4-14 3 8 3-5 3 2h6" fill="none" stroke="#C6FF3D" stroke-width="3" stroke-linejoin="round" stroke-linecap="round"/></svg><span data-i="f2">Ալիքներ ու վերլուծություն</span></h3>
+        <ul data-i="f2l" data-list></ul>
+      </article>
+      <article>
+        <h3><svg class="ic" viewBox="0 0 34 34" aria-hidden="true"><rect x="3" y="3" width="12" height="12" rx="3" fill="#6C5CE7"/><rect x="19" y="3" width="12" height="12" rx="3" fill="none" stroke="#6C5CE7" stroke-width="2.5"/><rect x="3" y="19" width="12" height="12" rx="3" fill="none" stroke="#6C5CE7" stroke-width="2.5"/><rect x="19" y="19" width="12" height="12" rx="3" fill="#C6FF3D"/></svg><span data-i="f3">Էֆեկտներ ու պադեր</span></h3>
+        <ul data-i="f3l" data-list></ul>
+      </article>
+      <article>
+        <h3><svg class="ic" viewBox="0 0 34 34" aria-hidden="true"><path d="M3 9h10l3 3h15v17H3z" fill="none" stroke="#6C5CE7" stroke-width="3" stroke-linejoin="round"/><path d="M9 21h16" stroke="#C6FF3D" stroke-width="3" stroke-linecap="round"/></svg><span data-i="f4">Գրադարան ու պուլտ</span></h3>
+        <ul data-i="f4l" data-list></ul>
+      </article>
+    </div>
+  </section>
+
+  <section class="wrap" id="test" aria-labelledby="th">
+    <div class="sh">
+      <span class="eyebrow" data-i="t_k">Թեստ</span>
+      <h2 id="th" data-i="t_h">Փորձիր DIJVIRTA-ն հենց բրաուզերում</h2>
+      <p data-i="t_p">Ամբողջական ծրագիրը 10 րոպեով։ Նվագիր դեմո երգերը կամ բեռնիր քո ֆայլերը, միացրու MIDI պուլտը Chrome-ում կամ Edge-ում։</p>
+    </div>
+    <div class="testbox">
+      <div class="testbar">
+        <span class="pill"><span class="dot" style="background:var(--lime)"></span><span data-i="t_left">Մնաց</span> <b id="tLeft">10:00</b></span>
+        <span class="tnote" data-i="t_note">Լավագույնը համակարգչի էկրանին՝ 1280px-ից լայն</span>
+        <a class="btn ghost small" id="tFull" href="app/" target="_blank" rel="noopener" data-i="t_full">Բացել ամբողջ էկրանով</a>
+      </div>
+      <div class="testview" id="tView">
+        <div class="tstart">
+          <svg viewBox="126 56 128 84" width="96" height="63" aria-hidden="true"><use href="#logo"/></svg>
+          <button type="button" class="btn primary" id="tGo" data-i="t_go">Սկսել թեստը</button>
+          <small data-i="t_info">Թեստը սկսվում է առաջին բացելուց և տևում է 10 րոպե։ Նոր թեստ՝ 24 ժամից։</small>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="wrap" id="download" aria-labelledby="ih">
+    <div class="sh">
+      <span class="eyebrow" data-i="d_k">Ներբեռնել</span>
+      <h2 id="ih" data-i="d_h">Տեղադրիր երեք քայլով</h2>
+    </div>
+    <ol class="steps">
+      <li><h3 data-i="s1">Ներբեռնիր</h3><p data-i="s1p" data-html>Սեղմիր ներքևի կոճակը և պահիր <span class="kbd">DIJVIRTA-Setup.exe</span> ֆայլը։</p></li>
+      <li><h3 data-i="s2">Տեղադրիր</h3><p data-i="s2p">Բացիր ֆայլը և սեղմիր Install։ Ծրագիրը կավելանա Start մենյու և աշխատասեղան։</p></li>
+      <li><h3 data-i="s3">Միացրու պուլտը</h3><p data-i="s3p">Միացրու DJ պուլտը USB-ով և բացիր DIJVIRTA-ն։ Պուլտը կճանաչվի ինքնաշխատ։</p></li>
+    </ol>
+    <div class="dl">
+      <a class="btn primary big dl-link" href="DIJVIRTA-Setup.exe" download><svg width="20" height="20" viewBox="0 0 20 20" aria-hidden="true"><path d="M10 2v11m0 0-4-4m4 4 4-4M3 17h14" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg><span data-i="d_btn">Ներբեռնել DIJVIRTA</span></a>
+      <div class="meta">
+        <span><span data-i="m_v">Տարբերակ</span> <b>1.1.0</b></span>
+        <span><span data-i="m_s">Չափ</span> <b>151 MB</b></span>
+        <span><span data-i="m_o">Համակարգ</span> <b>Windows 10 / 11, 64-bit</b></span>
+        <span data-i="m_k">Թարմացնելիս կարգավորումները, cue-երը և գրադարանը պահպանվում են</span>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <a class="mark" href="#top" aria-label="DIJVIRTA"><svg><use href="#logo"/></svg><b>DIJVIRTA</b></a>
+    <span class="tag">DJ · MUSIC</span>
+  </div>
+</footer>
+<script src="site.js"></script>
+</body>
+</html>
