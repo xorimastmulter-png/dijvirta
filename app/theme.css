@@ -1,0 +1,89 @@
+/* DIJVIRTA theme: modern, compact layout on top of the original styles (loaded last) */
+:root{--bg:#07070B;--p:#111118;--p2:#1B1B25;--p3:#252532;--ln:#262634;--tx:#E9E9F2;--mu:#8B8BA3;--A:#6C5CE7;--B:#C6FF3D;--C:#FF6FB5;--D:#3DD6FF;--r:9px}
+html,body{background:var(--bg)}
+body{font:500 12.5px/1.25 "Segoe UI Variable Text","Segoe UI",system-ui,sans-serif}
+button,select,input[type=search]{background:var(--p2);border:1px solid transparent;border-radius:6px;color:var(--tx);transition:background .12s,border-color .12s,box-shadow .12s}
+button:hover{background:var(--p3);border-color:var(--c,var(--A))}
+button.on{box-shadow:0 0 12px -3px var(--c,var(--A))}
+select{cursor:pointer}
+::-webkit-scrollbar{width:8px;height:8px}::-webkit-scrollbar-thumb{background:#2B2B3A;border-radius:8px}::-webkit-scrollbar-track{background:transparent}
+
+/* header: one row, toggles as pills */
+.bar{background:linear-gradient(180deg,#11111A,#0A0A10)!important;border-bottom:1px solid var(--ln);padding:4px 10px!important;gap:6px!important;flex-wrap:nowrap!important;overflow-x:auto;scrollbar-width:none}
+.bar::-webkit-scrollbar{display:none}
+.bar .mode{display:none!important}
+.bar>*{flex:none}
+.lg{height:24px!important;border-radius:5px}.logo{font-size:16px!important;margin-right:4px}
+.bar label:has(>input[type=checkbox]){padding:3px 9px;border-radius:999px;background:var(--p2);font-size:10.5px;letter-spacing:.06em;cursor:pointer;white-space:nowrap;user-select:none;transition:background .12s,box-shadow .12s}
+.bar label:has(>input[type=checkbox]:checked){background:rgba(108,92,231,.24);box-shadow:inset 0 0 0 1px rgba(108,92,231,.7);color:#fff}
+.bar label>input[type=checkbox]{display:none}
+.bar label:has(>#mv){font-size:10.5px;letter-spacing:.06em;color:var(--mu)}
+.bar select,.bar button{padding:4px 8px!important;font-size:11px!important;white-space:nowrap}
+#clock{font-size:11px}
+
+/* FX + Beat FX as cards */
+.fxrow{background:transparent!important;gap:6px!important;padding:5px 6px 0}
+.fxu{background:var(--p);border:1px solid var(--ln);border-radius:var(--r);padding:3px 8px!important;gap:6px!important}
+.fxu>b,.bfx>b{font-size:10.5px!important;letter-spacing:.1em}
+.fxu button,.bfx button,.bfx select{padding:2px 8px!important;font-size:10.5px!important}
+.fxe input{width:62px}
+.bfx{background:var(--p)!important;border:1px solid var(--ln);margin:5px 6px 0;border-radius:var(--r);padding:3px 8px!important}
+
+/* waveforms */
+.wfs{margin:5px 6px 0;border-radius:var(--r);overflow:hidden;border:1px solid var(--ln)!important;gap:1px!important}
+
+/* decks and mixer */
+.rig{gap:6px!important;margin:5px 6px 0!important}
+.deck,.mixer{background:var(--p)!important;border:1px solid var(--ln)!important;border-radius:var(--r)}
+#dA{box-shadow:inset 3px 0 0 var(--A)}#dB{box-shadow:inset -3px 0 0 var(--B)}#dC{box-shadow:inset 3px 0 0 var(--C)}#dD{box-shadow:inset -3px 0 0 var(--D)}
+.dh .num{font-weight:800;color:var(--c)!important}
+.ti b{font-weight:600}.time{font-weight:700}
+.deck>canvas{border-radius:5px}
+.pads button{border-radius:6px!important;border:1px solid var(--ln)!important;background:#0C0C12!important}
+.pads button.on{border-color:var(--pc)!important}
+.pnl select{border-radius:6px}
+.mid button{font-size:10px!important}
+.round{border-width:2px!important}
+.deck .row{gap:3px!important}
+.deck .row button{padding:3px 7px!important;font-size:10px!important;border-radius:5px;letter-spacing:.03em;white-space:nowrap;flex:none}
+.deck .row label{flex:none}
+.deck .row:not(.stems):not(.rbx) button{padding:3px 6px!important;letter-spacing:0}
+.deck .row small{font-size:9.5px!important}
+.deck .row:not(.stems):not(.rbx){flex-wrap:nowrap!important;overflow-x:auto;scrollbar-width:none}
+.stems button{border-radius:999px!important;padding:2px 9px!important;font-size:9.5px!important}
+.ch>b{font-size:11px}.kills button{border-radius:4px!important}
+.xfbox input{accent-color:#8E81F0}
+
+/* library */
+.lib{margin:5px 6px 0!important;border-radius:var(--r);overflow:hidden;border:1px solid var(--ln);background:var(--p)!important;grid-template-columns:170px 1fr!important}
+.lib aside{background:#0D0D14!important;border-right:1px solid var(--ln)!important;padding:5px!important;gap:2px!important}
+.lib aside button{border-radius:6px!important;padding:4px 9px!important;font-size:12px}
+.lib aside button.on{background:rgba(108,92,231,.26)!important;color:#fff}
+.srch{background:var(--p)!important;z-index:2}
+.srch input{background:var(--p2)!important;border-radius:7px!important;padding:5px 10px!important}
+.srch{display:flex!important;gap:6px;align-items:stretch;height:44px}
+.srch input{flex:0 0 240px;width:auto!important}
+#pvw{position:relative;flex:1;min-width:0;background:#0A0A10;border:1px solid var(--ln);border-radius:7px;overflow:hidden}
+#pvc{display:block;width:100%;height:100%;cursor:pointer}
+#pvl{position:absolute;left:8px;top:2px;font-size:10.5px;font-weight:600;color:#fff;text-shadow:0 1px 3px #000,0 0 6px #000;pointer-events:none;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;max-width:calc(100% - 40px)}
+#pvs{position:absolute;right:4px;top:50%;transform:translateY(-50%);padding:1px 7px!important;font-size:11px;background:#ff3b3b;color:#fff}
+th{position:sticky;top:44px;background:var(--p)!important;font-size:10px!important;text-transform:uppercase;letter-spacing:.07em;z-index:1}
+td{padding:3px 8px!important;border-bottom:1px solid #17171F!important}
+tbody tr:hover td{background:rgba(255,255,255,.03)}
+tr.sel,tr.sel td{background:rgba(108,92,231,.3)!important}
+td button{padding:1px 7px!important;border-radius:5px!important}
+
+/* footer, dialogs */
+.foot{background:transparent!important;font-size:10.5px!important;padding:3px 12px!important}
+dialog{border-radius:12px!important;border:1px solid var(--ln)!important;background:#12121A!important;box-shadow:0 24px 70px rgba(0,0,0,.65)}
+dialog::backdrop{background:rgba(0,0,0,.55);backdrop-filter:blur(2px)}
+#toast{border-radius:8px!important;background:#E9E9F2!important;color:#0A0A10!important;font-weight:600}
+.deck>canvas[data-k=wf]{height:34px!important}
+/* headphones block: title / status, then TEST + CUE buttons, then Mixing and Level side by side */
+.hp{display:grid!important;grid-template-columns:1fr 1fr!important;gap:3px 6px!important;align-items:center}
+.hp>small{grid-column:1/-1!important}
+.hp #hpTest{grid-column:1/2;padding:3px 6px!important;font-size:10px!important;white-space:nowrap}
+.hp .row{grid-column:2/3;display:flex!important;flex-wrap:nowrap!important;gap:3px!important}
+.hp .row button{flex:1;padding:3px 4px!important;font-size:10px!important;white-space:nowrap}
+.hp label{grid-column:auto;display:flex!important;flex-direction:column;font-size:9px!important;min-width:0}
+.hp label input{width:100%}
